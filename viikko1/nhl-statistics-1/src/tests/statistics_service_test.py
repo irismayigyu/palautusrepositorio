@@ -31,7 +31,7 @@ class TestStatisticsService(unittest.TestCase):
         self.assertIsNone(pelaaja)
 
     def test_top_points(self):
-        pelaaja = self.stats.top(1, 1)
+        pelaaja = self.stats.top(1, SortBy.POINTS)
         self.assertEqual(pelaaja[0].points, 124)
 
     def test_top_goals(self):
