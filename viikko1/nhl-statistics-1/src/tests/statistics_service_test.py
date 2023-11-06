@@ -20,4 +20,4 @@ class TestStatisticsService(unittest.TestCase):
         )
     def test_search_jos_pelaaja(self):
         pit = self.stats.team("PIT")
-        self.assertEqual(pit,"Lemieux")
+        self.assertEqual(pit[0],"Lemieux")
