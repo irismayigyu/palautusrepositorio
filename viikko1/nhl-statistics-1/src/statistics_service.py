@@ -25,19 +25,14 @@ class StatisticsService:
                 reverse=True
             )
 
-        elif sort_by == SortBy.ASSISTS:
+        #elif sort_by == SortBy.ASSISTS:
+        else:
             sorted_players = sorted(
                 self._players,
                 key=lambda player: player.assists,
                 reverse=True
             )
-        else:
-            sorted_players = sorted(
-                self._players,
-                key=lambda player: player.points,
-                reverse=True
-            )
-
+            
         return sorted_players[:how_many]
 
     def search(self, name):
