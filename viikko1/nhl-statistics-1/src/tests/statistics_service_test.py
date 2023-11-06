@@ -18,6 +18,21 @@ class TestStatisticsService(unittest.TestCase):
         self.stats = StatisticsService(
             PlayerReaderStub()
         )
-    def test_search_jos_pelaaja(self):
+    def test_team_jos_pelaaja(self):
         pit = self.stats.team("PIT")
         self.assertEqual(pit[0].name, "Lemieux")
+
+    def test_search_löytyy(self):
+        pelaaja = self.stats.search("Gretzky")
+        self.assertEqual(pelaaja.name, "Gretzky")
+
+    def test_search_ei_löydy(self):
+        pelaaja = self.stats.search("Muumi")
+        self.assertIsNone(pelaaja)
+
+    def test_top(self):
+        pelaaja = self.stats.top(1)
+        self.assertEqual(pelaaja[0].points, 124)
+        
+
+
