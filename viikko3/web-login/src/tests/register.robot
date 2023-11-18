@@ -46,6 +46,7 @@ Create User And Go To Register Page
 Login After Successful Registration
     RSet Username  kalle
     RSet Password  kalle456
+    RSet Passwordc  kalle456
     RSubmit Credentials
     Go To Login Page
     Set Username  kalle
@@ -55,7 +56,8 @@ Login After Successful Registration
 
 Login After Failed Registration
     RSet Username  kalle
-    RSet Password  kalle
+    RSet Password  kalle123
+    RSet Passwordc  kalle456
     RSubmit Credentials
     Go To Login Page
     Set Username  kalle
@@ -84,3 +86,7 @@ RSet Username
 RSet Password
     [Arguments]  ${password}
     Input Password  password  ${password}
+
+RSet Passwordc
+    [Arguments]  ${password_confirmation}
+    Input Password  password_confirmation  ${password_confirmation}
