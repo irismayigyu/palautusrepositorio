@@ -47,6 +47,7 @@ Login After Successful Registration
     RSet Username  kalle
     RSet Password  kalle456
     RSubmit Credentials
+    Go To Login Page
     Set Username  kalle
     Set Password  kalle456
     Submit Credentials
@@ -56,6 +57,7 @@ Login After Failed Registration
     RSet Username  kalle
     RSet Password  kalle
     RSubmit Credentials
+    Go To Login Page
     Set Username  kalle
     Set Password  kalle
     Submit Credentials
