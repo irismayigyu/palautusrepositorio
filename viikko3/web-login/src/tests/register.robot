@@ -44,13 +44,13 @@ Create User And Go To Register Page
     Register Page Should Be Open
 
 Login After Successful Registration
-    RSet Username  kalle
-    RSet Password  kalle456
-    RSet Passwordc  kalle456
+    RSet Username  koira
+    RSet Password  koira123
+    RSet Passwordc  koira123
     RSubmit Credentials
     Go To Login Page
-    Set Username  kalle
-    Set Password  kalle456
+    Set Username  koira
+    Set Password  koira123
     Submit Credentials
     Login Should Succeed
 
