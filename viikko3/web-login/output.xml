@@ -1,738 +1,741 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on darwin)" generated="20231118 22:51:56.038" rpa="false" schemaversion="4">
-<suite id="s1" name="Register" source="/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/register.robot">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on darwin)" generated="20231121 16:41:57.424" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests">
+<suite id="s1-s1" name="Home" source="/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/home.robot">
 <kw name="Open And Configure Browser" library="resource" type="SETUP">
 <kw name="Evaluate" library="BuiltIn">
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231118 22:51:57.105" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10bb04cb0&gt;</msg>
-<status status="PASS" starttime="20231118 22:51:57.105" endtime="20231118 22:51:57.105"/>
+<msg timestamp="20231121 16:41:58.667" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x109d463c0&gt;</msg>
+<status status="PASS" starttime="20231121 16:41:58.667" endtime="20231121 16:41:58.667"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20231118 22:51:57.105" endtime="20231118 22:51:57.105"/>
+<status status="PASS" starttime="20231121 16:41:58.667" endtime="20231121 16:41:58.667"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231118 22:51:57.106" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20231118 22:51:57.106" endtime="20231118 22:52:00.430"/>
+<msg timestamp="20231121 16:41:58.668" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231121 16:41:58.668" endtime="20231121 16:42:03.772"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20231118 22:52:00.430" endtime="20231118 22:52:00.431"/>
+<status status="PASS" starttime="20231121 16:42:03.773" endtime="20231121 16:42:03.774"/>
 </kw>
-<status status="PASS" starttime="20231118 22:51:57.104" endtime="20231118 22:52:00.432"/>
+<status status="PASS" starttime="20231121 16:41:58.666" endtime="20231121 16:42:03.774"/>
 </kw>
-<test id="s1-t1" name="Register With Valid Username And Password" line="9">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:00.439" endtime="20231118 22:52:00.523"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
+<test id="s1-s1-t1" name="Click Login Link" line="9">
+<kw name="Go To Starting Page" library="resource" type="SETUP">
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
+<arg>${HOME_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:00.529" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:00.528" endtime="20231118 22:52:00.754"/>
+<msg timestamp="20231121 16:42:03.779" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg timestamp="20231121 16:42:05.105" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231121 16:42:05.106" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010786ed28 chromedriver + 4795688
+1   chromedriver                        0x00000001078662b3 chromedriver + 4760243
+2   chromedriver                        0x000000010743f88d chromedriver + 407693
+3   chromedriver                        0x0000000107437928 chromedriver + 375080
+4   chromedriver                        0x00000001074260c9 chromedriver + 303305
+5   chromedriver                        0x00000001074277e6 chromedriver + 309222
+6   chromedriver                        0x0000000107426497 chromedriver + 304279
+7   chromedriver                        0x0000000107425208 chromedriver + 299528
+8   chromedriver                        0x00000001074251ad chromedriver + 299437
+9   chromedriver                        0x0000000107423a24 chromedriver + 293412
+10  chromedriver                        0x0000000107423f6a chromedriver + 294762
+11  chromedriver                        0x000000010744270e chromedriver + 419598
+12  chromedriver                        0x00000001074d2165 chromedriver + 1007973
+13  chromedriver                        0x00000001074b5ca2 chromedriver + 892066
+14  chromedriver                        0x00000001074d1b2b chromedriver + 1006379
+15  chromedriver                        0x00000001074b5a73 chromedriver + 891507
+16  chromedriver                        0x0000000107480143 chromedriver + 672067
+17  chromedriver                        0x000000010748131e chromedriver + 676638
+18  chromedriver                        0x000000010782f795 chromedriver + 4536213
+19  chromedriver                        0x0000000107834853 chromedriver + 4556883
+20  chromedriver                        0x0000000107815001 chromedriver + 4427777
+21  chromedriver                        0x000000010783559d chromedriver + 4560285
+22  chromedriver                        0x000000010780648c chromedriver + 4367500
+23  chromedriver                        0x00000001078550e8 chromedriver + 4690152
+24  chromedriver                        0x000000010785529e chromedriver + 4690590
+25  chromedriver                        0x0000000107865eee chromedriver + 4759278
+26  libsystem_pthread.dylib             0x00007fff20366950 _pthread_start + 224
+27  libsystem_pthread.dylib             0x00007fff2036247b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20231121 16:42:03.778" endtime="20231121 16:42:05.124"/>
 </kw>
-<status status="PASS" starttime="20231118 22:52:00.527" endtime="20231118 22:52:00.754"/>
+<status status="FAIL" starttime="20231121 16:42:03.778" endtime="20231121 16:42:05.124"/>
 </kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:00.845" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:00.755" endtime="20231118 22:52:00.845"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:00.754" endtime="20231118 22:52:00.845"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:00.438" endtime="20231118 22:52:00.845"/>
-</kw>
-<kw name="RSet Username">
-<arg>kalle</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:00.848" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:00.847" endtime="20231118 22:52:01.171"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:00.846" endtime="20231118 22:52:01.172"/>
-</kw>
-<kw name="RSet Password">
-<arg>kalle123</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:01.173" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:01.236" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:01.356" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:01.172" endtime="20231118 22:52:01.356"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.172" endtime="20231118 22:52:01.357"/>
-</kw>
-<kw name="RSubmit Credentials">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:01.358" level="INFO">Clicking button 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:01.357" endtime="20231118 22:52:01.564"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.357" endtime="20231118 22:52:01.565"/>
-</kw>
-<kw name="Register Should Succeed">
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:01.581" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:01.566" endtime="20231118 22:52:01.581"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.566" endtime="20231118 22:52:01.581"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.565" endtime="20231118 22:52:01.581"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:00.432" endtime="20231118 22:52:01.582"/>
+<status status="FAIL" starttime="20231121 16:42:03.774" endtime="20231121 16:42:05.124">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010786ed28 chromedriver + 4795688
+1   chromedriver                        0x00000001078662b3 chromedriver + 4760243
+2   chromedriver                        0x000000010743f88d chromedriver + 407693
+3   chromedriver                        0x0000000107437928 chromedriver + 375080
+4   chromedriver                        0x00000001074260c9 chromedriver + 303305
+5   chromedriver                        0x00000001074277e6 chromedriver + 309222
+6   chromedriver                        0x0000000107426497 chromedriver + 304279
+7   chromedriver                        0x0000000107425208 chromedriver + 299528
+8   chromedriver                        0x00000001074251ad chromedriver + 2...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010748131e chromedriver + 676638
+18  chromedriver                        0x000000010782f795 chromedriver + 4536213
+19  chromedriver                        0x0000000107834853 chromedriver + 4556883
+20  chromedriver                        0x0000000107815001 chromedriver + 4427777
+21  chromedriver                        0x000000010783559d chromedriver + 4560285
+22  chromedriver                        0x000000010780648c chromedriver + 4367500
+23  chromedriver                        0x00000001078550e8 chromedriver + 4690152
+24  chromedriver                        0x000000010785529e chromedriver + 4690590
+25  chromedriver                        0x0000000107865eee chromedriver + 4759278
+26  libsystem_pthread.dylib             0x00007fff20366950 _pthread_start + 224
+27  libsystem_pthread.dylib             0x00007fff2036247b thread_start + 15</status>
 </test>
-<test id="s1-t2" name="Register With Too Short Username And Valid Password" line="15">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:01.584" endtime="20231118 22:52:01.633"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
+<test id="s1-s1-t2" name="Click Register Link" line="13">
+<kw name="Go To Starting Page" library="resource" type="SETUP">
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
+<arg>${HOME_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:01.634" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:01.634" endtime="20231118 22:52:01.691"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.633" endtime="20231118 22:52:01.692"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:01.701" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:01.693" endtime="20231118 22:52:01.701"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.692" endtime="20231118 22:52:01.701"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.583" endtime="20231118 22:52:01.701"/>
-</kw>
-<kw name="RSet Username">
-<arg>ka</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:01.707" level="INFO">Typing text 'ka' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:01.702" endtime="20231118 22:52:01.845"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.701" endtime="20231118 22:52:01.845"/>
-</kw>
-<kw name="RSet Password">
-<arg>kalle123</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:01.847" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:01.904" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:01.995" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:01.846" endtime="20231118 22:52:01.995"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.846" endtime="20231118 22:52:01.995"/>
-</kw>
-<kw name="RSubmit Credentials">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:01.997" level="INFO">Clicking button 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:01.996" endtime="20231118 22:52:02.112"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.996" endtime="20231118 22:52:02.113"/>
-</kw>
-<kw name="Register Should Fail With Message">
-<arg>Invalid username or password</arg>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:02.131" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.115" endtime="20231118 22:52:02.131"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.114" endtime="20231118 22:52:02.132"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${message}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231118 22:52:02.159" level="INFO">Current page contains text 'Invalid username or password'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.132" endtime="20231118 22:52:02.159"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.113" endtime="20231118 22:52:02.159"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:01.582" endtime="20231118 22:52:02.159"/>
-</test>
-<test id="s1-t3" name="Register With Valid Username And Invalid Password" line="21">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:02.161" endtime="20231118 22:52:02.189"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:02.189" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:02.189" endtime="20231118 22:52:02.246"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.189" endtime="20231118 22:52:02.246"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:02.254" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.246" endtime="20231118 22:52:02.254"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.246" endtime="20231118 22:52:02.254"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.160" endtime="20231118 22:52:02.254"/>
-</kw>
-<kw name="RSet Username">
-<arg>kalle</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:02.258" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.256" endtime="20231118 22:52:02.403"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.255" endtime="20231118 22:52:02.404"/>
-</kw>
-<kw name="RSet Password">
-<arg>kalle</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:02.405" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:02.453" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:02.520" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:02.404" endtime="20231118 22:52:02.520"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.404" endtime="20231118 22:52:02.520"/>
-</kw>
-<kw name="RSubmit Credentials">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:02.521" level="INFO">Clicking button 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.520" endtime="20231118 22:52:02.652"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.520" endtime="20231118 22:52:02.652"/>
-</kw>
-<kw name="Register Should Fail With Message">
-<arg>Invalid username or password</arg>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:02.665" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.653" endtime="20231118 22:52:02.665"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.653" endtime="20231118 22:52:02.665"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${message}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231118 22:52:02.684" level="INFO">Current page contains text 'Invalid username or password'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.665" endtime="20231118 22:52:02.684"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.652" endtime="20231118 22:52:02.684"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.160" endtime="20231118 22:52:02.684"/>
-</test>
-<test id="s1-t4" name="Register With Nonmatching Password And Password Confirmation" line="28">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:02.686" endtime="20231118 22:52:02.718"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:02.718" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:02.718" endtime="20231118 22:52:02.770"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.718" endtime="20231118 22:52:02.770"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:02.784" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.770" endtime="20231118 22:52:02.784"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.770" endtime="20231118 22:52:02.784"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.686" endtime="20231118 22:52:02.784"/>
-</kw>
-<kw name="RSet Username">
-<arg>kalle</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:02.785" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:02.785" endtime="20231118 22:52:02.919"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.784" endtime="20231118 22:52:02.919"/>
-</kw>
-<kw name="RSet Password">
-<arg>kalle456</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:02.920" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:02.974" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:03.046" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:02.920" endtime="20231118 22:52:03.047"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.919" endtime="20231118 22:52:03.047"/>
-</kw>
-<kw name="RSubmit Credentials">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:03.048" level="INFO">Clicking button 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.047" endtime="20231118 22:52:03.165"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.047" endtime="20231118 22:52:03.165"/>
-</kw>
-<kw name="Register Should Fail With Message">
-<arg>Password does not match</arg>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:03.174" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.167" endtime="20231118 22:52:03.174"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.166" endtime="20231118 22:52:03.174"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${message}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231118 22:52:03.204" level="INFO">Current page contains text 'Password does not match'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.174" endtime="20231118 22:52:03.204"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.165" endtime="20231118 22:52:03.204"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:02.685" endtime="20231118 22:52:03.205"/>
-</test>
-<test id="s1-t5" name="Login With Nonexistent Username" line="36">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:03.208" endtime="20231118 22:52:03.236"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:03.236" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:03.236" endtime="20231118 22:52:03.290"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.236" endtime="20231118 22:52:03.290"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:03.301" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.290" endtime="20231118 22:52:03.301"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.290" endtime="20231118 22:52:03.301"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.207" endtime="20231118 22:52:03.301"/>
-</kw>
-<kw name="Create User" library="AppLibrary">
-<arg>Nonexistent</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:03.302" endtime="20231118 22:52:03.321"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:03.322" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:03.322" endtime="20231118 22:52:03.400"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.321" endtime="20231118 22:52:03.400"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:03.412" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.401" endtime="20231118 22:52:03.413"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.400" endtime="20231118 22:52:03.413"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.206" endtime="20231118 22:52:03.413"/>
-</test>
-<test id="s1-t6" name="Create User And Go To Register Page" line="41">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:03.415" endtime="20231118 22:52:03.445"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:03.446" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:03.445" endtime="20231118 22:52:03.502"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.445" endtime="20231118 22:52:03.502"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:03.512" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.502" endtime="20231118 22:52:03.513"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.502" endtime="20231118 22:52:03.513"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.415" endtime="20231118 22:52:03.513"/>
-</kw>
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:03.513" endtime="20231118 22:52:03.534"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:03.535" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:03.534" endtime="20231118 22:52:03.588"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.534" endtime="20231118 22:52:03.589"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:03.602" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.590" endtime="20231118 22:52:03.602"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.590" endtime="20231118 22:52:03.602"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.414" endtime="20231118 22:52:03.603"/>
-</test>
-<test id="s1-t7" name="Login After Successful Registration" line="46">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:03.604" endtime="20231118 22:52:03.636"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:03.637" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:03.637" endtime="20231118 22:52:03.689"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.636" endtime="20231118 22:52:03.689"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:03.700" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.690" endtime="20231118 22:52:03.700"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.689" endtime="20231118 22:52:03.700"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.604" endtime="20231118 22:52:03.700"/>
-</kw>
-<kw name="RSet Username">
-<arg>koira</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:03.702" level="INFO">Typing text 'koira' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:03.701" endtime="20231118 22:52:03.829"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.701" endtime="20231118 22:52:03.829"/>
-</kw>
-<kw name="RSet Password">
-<arg>koira123</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:03.832" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:03.887" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:03.959" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:03.830" endtime="20231118 22:52:03.959"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.830" endtime="20231118 22:52:03.959"/>
-</kw>
-<kw name="RSet Passwordc">
-<arg>koira123</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password_confirmation</arg>
-<arg>${password_confirmation}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:03.961" level="INFO">Typing password into text field 'password_confirmation'.</msg>
-<msg timestamp="20231118 22:52:04.008" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:04.076" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:03.960" endtime="20231118 22:52:04.077"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.959" endtime="20231118 22:52:04.077"/>
-</kw>
-<kw name="RSubmit Credentials">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:04.078" level="INFO">Clicking button 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:04.077" endtime="20231118 22:52:04.215"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.077" endtime="20231118 22:52:04.215"/>
-</kw>
-<kw name="Go To Login Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:04.216" level="INFO">Opening url 'http://localhost:5001/login'</msg>
-<status status="PASS" starttime="20231118 22:52:04.216" endtime="20231118 22:52:04.302"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.215" endtime="20231118 22:52:04.302"/>
-</kw>
-<kw name="Set Username" library="login_resource">
-<arg>koira</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:04.304" level="INFO">Typing text 'koira' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:04.303" endtime="20231118 22:52:04.468"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.302" endtime="20231118 22:52:04.468"/>
-</kw>
-<kw name="Set Password" library="login_resource">
-<arg>koira123</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:04.469" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:04.516" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:04.586" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:04.468" endtime="20231118 22:52:04.586"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.468" endtime="20231118 22:52:04.586"/>
-</kw>
-<kw name="Submit Credentials" library="login_resource">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Login</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:04.587" level="INFO">Clicking button 'Login'.</msg>
-<status status="PASS" starttime="20231118 22:52:04.587" endtime="20231118 22:52:04.740"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.587" endtime="20231118 22:52:04.740"/>
-</kw>
-<kw name="Login Should Succeed" library="login_resource">
-<kw name="Main Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Ohtu Application main page</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:04.751" level="INFO">Page title is 'Ohtu Application main page'.</msg>
-<status status="PASS" starttime="20231118 22:52:04.742" endtime="20231118 22:52:04.751"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.741" endtime="20231118 22:52:04.751"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.741" endtime="20231118 22:52:04.751"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:03.603" endtime="20231118 22:52:04.752"/>
-</test>
-<test id="s1-t8" name="Login After Failed Registration" line="57">
-<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
-<kw name="Create User" library="AppLibrary">
-<arg>kalle</arg>
-<arg>kalle123</arg>
-<status status="PASS" starttime="20231118 22:52:04.753" endtime="20231118 22:52:04.777"/>
-</kw>
-<kw name="Go To Register Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${REGISTER_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:04.778" level="INFO">Opening url 'http://localhost:5001/register'</msg>
-<status status="PASS" starttime="20231118 22:52:04.778" endtime="20231118 22:52:04.845"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.777" endtime="20231118 22:52:04.846"/>
-</kw>
-<kw name="Register Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:04.854" level="INFO">Page title is 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:04.847" endtime="20231118 22:52:04.854"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.846" endtime="20231118 22:52:04.854"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.753" endtime="20231118 22:52:04.854"/>
-</kw>
-<kw name="RSet Username">
-<arg>kalle</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:04.855" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:04.855" endtime="20231118 22:52:04.991"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.854" endtime="20231118 22:52:04.991"/>
-</kw>
-<kw name="RSet Password">
-<arg>kalle123</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:04.992" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:05.049" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:05.117" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:04.992" endtime="20231118 22:52:05.117"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.991" endtime="20231118 22:52:05.117"/>
-</kw>
-<kw name="RSet Passwordc">
-<arg>kalle456</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password_confirmation</arg>
-<arg>${password_confirmation}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:05.118" level="INFO">Typing password into text field 'password_confirmation'.</msg>
-<msg timestamp="20231118 22:52:05.170" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:05.237" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:05.118" endtime="20231118 22:52:05.237"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.117" endtime="20231118 22:52:05.237"/>
-</kw>
-<kw name="RSubmit Credentials">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Register</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:05.238" level="INFO">Clicking button 'Register'.</msg>
-<status status="PASS" starttime="20231118 22:52:05.238" endtime="20231118 22:52:05.358"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.237" endtime="20231118 22:52:05.358"/>
-</kw>
-<kw name="Go To Login Page" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231118 22:52:05.359" level="INFO">Opening url 'http://localhost:5001/login'</msg>
-<status status="PASS" starttime="20231118 22:52:05.359" endtime="20231118 22:52:05.425"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.358" endtime="20231118 22:52:05.425"/>
-</kw>
-<kw name="Set Username" library="login_resource">
-<arg>kalle</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:05.427" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
-<status status="PASS" starttime="20231118 22:52:05.426" endtime="20231118 22:52:05.573"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.425" endtime="20231118 22:52:05.573"/>
-</kw>
-<kw name="Set Password" library="login_resource">
-<arg>kalle</arg>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:05.574" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20231118 22:52:05.626" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20231118 22:52:05.695" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20231118 22:52:05.574" endtime="20231118 22:52:05.695"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.573" endtime="20231118 22:52:05.695"/>
-</kw>
-<kw name="Submit Credentials" library="login_resource">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Login</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231118 22:52:05.696" level="INFO">Clicking button 'Login'.</msg>
-<status status="PASS" starttime="20231118 22:52:05.696" endtime="20231118 22:52:05.813"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.696" endtime="20231118 22:52:05.813"/>
-</kw>
-<kw name="Login Should Fail With Message" library="login_resource">
-<arg>Invalid username or password</arg>
-<kw name="Login Page Should Be Open" library="resource">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20231118 22:52:05.829" level="INFO">Page title is 'Login'.</msg>
-<status status="PASS" starttime="20231118 22:52:05.817" endtime="20231118 22:52:05.829"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.817" endtime="20231118 22:52:05.829"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${message}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231118 22:52:05.846" level="INFO">Current page contains text 'Invalid username or password'.</msg>
-<status status="PASS" starttime="20231118 22:52:05.829" endtime="20231118 22:52:05.846"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:05.816" endtime="20231118 22:52:05.847"/>
-</kw>
-<status status="PASS" starttime="20231118 22:52:04.752" endtime="20231118 22:52:05.847"/>
+<msg timestamp="20231121 16:42:05.127" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg timestamp="20231121 16:42:05.272" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: 'NoneType' object has no attribute 'encode'</msg>
+<msg timestamp="20231121 16:42:05.273" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010786ed28 chromedriver + 4795688
+1   chromedriver                        0x00000001078662b3 chromedriver + 4760243
+2   chromedriver                        0x000000010743f88d chromedriver + 407693
+3   chromedriver                        0x0000000107437928 chromedriver + 375080
+4   chromedriver                        0x00000001074260c9 chromedriver + 303305
+5   chromedriver                        0x00000001074277e6 chromedriver + 309222
+6   chromedriver                        0x0000000107426497 chromedriver + 304279
+7   chromedriver                        0x0000000107425208 chromedriver + 299528
+8   chromedriver                        0x00000001074251ad chromedriver + 299437
+9   chromedriver                        0x0000000107423a24 chromedriver + 293412
+10  chromedriver                        0x0000000107423f6a chromedriver + 294762
+11  chromedriver                        0x000000010744270e chromedriver + 419598
+12  chromedriver                        0x00000001074d2165 chromedriver + 1007973
+13  chromedriver                        0x00000001074b5ca2 chromedriver + 892066
+14  chromedriver                        0x00000001074d1b2b chromedriver + 1006379
+15  chromedriver                        0x00000001074b5a73 chromedriver + 891507
+16  chromedriver                        0x0000000107480143 chromedriver + 672067
+17  chromedriver                        0x000000010748131e chromedriver + 676638
+18  chromedriver                        0x000000010782f795 chromedriver + 4536213
+19  chromedriver                        0x0000000107834853 chromedriver + 4556883
+20  chromedriver                        0x0000000107815001 chromedriver + 4427777
+21  chromedriver                        0x000000010783559d chromedriver + 4560285
+22  chromedriver                        0x000000010780648c chromedriver + 4367500
+23  chromedriver                        0x00000001078550e8 chromedriver + 4690152
+24  chromedriver                        0x000000010785529e chromedriver + 4690590
+25  chromedriver                        0x0000000107865eee chromedriver + 4759278
+26  libsystem_pthread.dylib             0x00007fff20366950 _pthread_start + 224
+27  libsystem_pthread.dylib             0x00007fff2036247b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20231121 16:42:05.127" endtime="20231121 16:42:05.275"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:05.127" endtime="20231121 16:42:05.275"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:05.126" endtime="20231121 16:42:05.276">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010786ed28 chromedriver + 4795688
+1   chromedriver                        0x00000001078662b3 chromedriver + 4760243
+2   chromedriver                        0x000000010743f88d chromedriver + 407693
+3   chromedriver                        0x0000000107437928 chromedriver + 375080
+4   chromedriver                        0x00000001074260c9 chromedriver + 303305
+5   chromedriver                        0x00000001074277e6 chromedriver + 309222
+6   chromedriver                        0x0000000107426497 chromedriver + 304279
+7   chromedriver                        0x0000000107425208 chromedriver + 299528
+8   chromedriver                        0x00000001074251ad chromedriver + 2...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010748131e chromedriver + 676638
+18  chromedriver                        0x000000010782f795 chromedriver + 4536213
+19  chromedriver                        0x0000000107834853 chromedriver + 4556883
+20  chromedriver                        0x0000000107815001 chromedriver + 4427777
+21  chromedriver                        0x000000010783559d chromedriver + 4560285
+22  chromedriver                        0x000000010780648c chromedriver + 4367500
+23  chromedriver                        0x00000001078550e8 chromedriver + 4690152
+24  chromedriver                        0x000000010785529e chromedriver + 4690590
+25  chromedriver                        0x0000000107865eee chromedriver + 4759278
+26  libsystem_pthread.dylib             0x00007fff20366950 _pthread_start + 224
+27  libsystem_pthread.dylib             0x00007fff2036247b thread_start + 15</status>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231118 22:52:05.848" endtime="20231118 22:52:06.023"/>
+<status status="PASS" starttime="20231121 16:42:05.278" endtime="20231121 16:42:05.459"/>
 </kw>
-<status status="PASS" starttime="20231118 22:51:56.043" endtime="20231118 22:52:06.024"/>
+<status status="FAIL" starttime="20231121 16:41:57.488" endtime="20231121 16:42:05.459"/>
+</suite>
+<suite id="s1-s2" name="Login" source="/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/login.robot">
+<kw name="Open And Configure Browser" library="resource" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231121 16:42:05.474" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x109d474a0&gt;</msg>
+<status status="PASS" starttime="20231121 16:42:05.474" endtime="20231121 16:42:05.474"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231121 16:42:05.475" endtime="20231121 16:42:05.475"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231121 16:42:05.475" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231121 16:42:05.475" endtime="20231121 16:42:07.910"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231121 16:42:07.910" endtime="20231121 16:42:07.912"/>
+</kw>
+<status status="PASS" starttime="20231121 16:42:05.474" endtime="20231121 16:42:07.912"/>
+</kw>
+<test id="s1-s2-t1" name="Login With Correct Credentials" line="8">
+<kw name="Create User And Go To Login Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:07.923" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:07.923" endtime="20231121 16:42:07.923"/>
+</kw>
+<kw name="Go To Login Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:07.924" endtime="20231121 16:42:07.924"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:07.924" endtime="20231121 16:42:07.925"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:07.914" endtime="20231121 16:42:07.925"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:07.913" endtime="20231121 16:42:07.926">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s2-t2" name="Login With Incorrect Password" line="14">
+<kw name="Create User And Go To Login Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:07.934" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:07.934" endtime="20231121 16:42:07.934"/>
+</kw>
+<kw name="Go To Login Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:07.935" endtime="20231121 16:42:07.935"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:07.935" endtime="20231121 16:42:07.935"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:07.927" endtime="20231121 16:42:07.935"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:07.926" endtime="20231121 16:42:07.938">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231121 16:42:07.940" endtime="20231121 16:42:08.106"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:05.461" endtime="20231121 16:42:08.107"/>
+</suite>
+<suite id="s1-s3" name="Register" source="/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/register.robot">
+<kw name="Open And Configure Browser" library="resource" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231121 16:42:08.164" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x109ed40e0&gt;</msg>
+<status status="PASS" starttime="20231121 16:42:08.164" endtime="20231121 16:42:08.164"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231121 16:42:08.165" endtime="20231121 16:42:08.165"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231121 16:42:08.166" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231121 16:42:08.166" endtime="20231121 16:42:10.715"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231121 16:42:10.716" endtime="20231121 16:42:10.717"/>
+</kw>
+<status status="PASS" starttime="20231121 16:42:08.163" endtime="20231121 16:42:10.717"/>
+</kw>
+<test id="s1-s3-t1" name="Register With Valid Username And Password" line="9">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.729" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.729" endtime="20231121 16:42:10.729"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.729" endtime="20231121 16:42:10.729"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.729" endtime="20231121 16:42:10.729"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.719" endtime="20231121 16:42:10.730"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.717" endtime="20231121 16:42:10.730">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t2" name="Register With Too Short Username And Valid Password" line="15">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.739" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.739" endtime="20231121 16:42:10.739"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.740" endtime="20231121 16:42:10.740"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.741" endtime="20231121 16:42:10.741"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.733" endtime="20231121 16:42:10.742"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.733" endtime="20231121 16:42:10.742">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t3" name="Register With Valid Username And Invalid Password" line="21">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.756" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.756" endtime="20231121 16:42:10.756"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.756" endtime="20231121 16:42:10.756"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.757" endtime="20231121 16:42:10.757"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.744" endtime="20231121 16:42:10.757"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.743" endtime="20231121 16:42:10.757">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t4" name="Register With Nonmatching Password And Password Confirmation" line="28">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.786" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.785" endtime="20231121 16:42:10.787"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.787" endtime="20231121 16:42:10.787"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.787" endtime="20231121 16:42:10.787"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.759" endtime="20231121 16:42:10.788"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.758" endtime="20231121 16:42:10.788">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t5" name="Login With Nonexistent Username" line="36">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.804" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.804" endtime="20231121 16:42:10.804"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.804" endtime="20231121 16:42:10.805"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.805" endtime="20231121 16:42:10.805"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.791" endtime="20231121 16:42:10.805"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.790" endtime="20231121 16:42:10.805">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t6" name="Create User And Go To Register Page" line="41">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.817" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.817" endtime="20231121 16:42:10.817"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.817" endtime="20231121 16:42:10.817"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.817" endtime="20231121 16:42:10.817"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.807" endtime="20231121 16:42:10.818"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.806" endtime="20231121 16:42:10.818">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t7" name="Login After Successful Registration" line="46">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.827" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.827" endtime="20231121 16:42:10.827"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.828" endtime="20231121 16:42:10.828"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.828" endtime="20231121 16:42:10.828"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.821" endtime="20231121 16:42:10.828"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.820" endtime="20231121 16:42:10.830">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s3-t8" name="Login After Failed Registration" line="57">
+<kw name="Create User And Go To Register Page" library="resource" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231121 16:42:10.844" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231121 16:42:10.844" endtime="20231121 16:42:10.844"/>
+</kw>
+<kw name="Go To Register Page" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.844" endtime="20231121 16:42:10.844"/>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231121 16:42:10.847" endtime="20231121 16:42:10.847"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.832" endtime="20231121 16:42:10.847"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:10.831" endtime="20231121 16:42:10.847">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231121 16:42:10.848" endtime="20231121 16:42:11.011"/>
+</kw>
+<status status="FAIL" starttime="20231121 16:42:08.108" endtime="20231121 16:42:11.011"/>
+</suite>
+<status status="FAIL" starttime="20231121 16:41:57.428" endtime="20231121 16:42:11.013"/>
 </suite>
 <statistics>
 <total>
-<stat pass="8" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="12" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="8" fail="0" skip="0" id="s1" name="Register">Register</stat>
+<stat pass="0" fail="12" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="Home">Tests.Home</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s2" name="Login">Tests.Login</stat>
+<stat pass="0" fail="8" skip="0" id="s1-s3" name="Register">Tests.Register</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231121 16:41:58.664" level="ERROR">Error in file '/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109b1de20&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x109b1de20&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109b1de20&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 8, in __init__
+    self.reset_application()
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 11, in reset_application
+    requests.post(f"{self._base_url}/tests/reset")
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109b1de20&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<msg timestamp="20231121 16:42:05.272" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: 'NoneType' object has no attribute 'encode'</msg>
+<msg timestamp="20231121 16:42:05.472" level="ERROR">Error in file '/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109b46060&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x109b46060&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109b46060&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 8, in __init__
+    self.reset_application()
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 11, in reset_application
+    requests.post(f"{self._base_url}/tests/reset")
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109b46060&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<msg timestamp="20231121 16:42:08.132" level="ERROR">Error in file '/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109d463f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x109d463f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109d463f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 8, in __init__
+    self.reset_application()
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 11, in reset_application
+    requests.post(f"{self._base_url}/tests/reset")
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109d463f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<msg timestamp="20231121 16:42:08.156" level="ERROR">Error in file '/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/tests/login_resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109ed5b50&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1314, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1074, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1018, in send
+    self.connect()
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x109ed5b50&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109ed5b50&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 8, in __init__
+    self.reset_application()
+  File "/Users/iris2/jokudir/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 11, in reset_application
+    requests.post(f"{self._base_url}/tests/reset")
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/iris2/Library/Caches/pypoetry/virtualenvs/web-login-uWXKeZPk-py3.12/lib/python3.12/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x109ed5b50&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
 </errors>
 </robot>
