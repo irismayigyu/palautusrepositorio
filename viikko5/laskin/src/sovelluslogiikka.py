@@ -16,3 +16,7 @@ class Sovelluslogiikka:
 
     def arvo(self):
         return self._arvo
+
+
+    def kumoa(self):
+        self._arvo = self.edellinen_tila
